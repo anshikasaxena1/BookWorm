@@ -1,0 +1,16 @@
+# Node.js
+backend/node_modules/
+
+# React Native or frontend
+mobile/node_modules/
+
+# Environment variables
+backend/.env
+mobile/.env
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
