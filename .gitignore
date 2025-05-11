@@ -8,9 +8,4 @@ mobile/node_modules/
 backend/.env
 mobile/.env
 
-# Logs
-*.log
 
-# OS files
-.DS_Store
-Thumbs.db
