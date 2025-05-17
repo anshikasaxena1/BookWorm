@@ -1,14 +1,19 @@
-import { View, Text, TextInput, TouchableOpacity,ActivityIndicator, KeyboardAvoidingView, Platform } from 'react-native'
+import { View, Text, TextInput, TouchableOpacity,ActivityIndicator, KeyboardAvoidingView, Platform,Image } from 'react-native'
+
 import {Link} from "expo-router"
 import styles from "../../assets/styles/login.styles"
 import {useState} from "react"
 import {Ionicons} from "@expo/vector-icons";
+import COLORS from '../../constants/colors';
+
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword]=useState("");
-  const [showPassword, setShowPassword]=useState("");
-  const [isLoading, setIsLoading] = useState("");
+  const [showPassword, setShowPassword]=useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  
 
   const handleLogin=()=>{};
 
@@ -22,14 +27,15 @@ export default function Login() {
       <Image
         source={require("../../assets/images/i.png")}
         style={styles.illustrationImage}
-        resizeMode="contain"
+        resizeMode='contain'
+        
       />
       </View>
       <View style={styles.card} >
         <View style={styles.formContainer}>
           {/* email */}
           <View style={styles.inputGroup}  >
-            <Text style={styles.inputContainer} >Email</Text>
+            <Text style={styles.label} >Email</Text>
             <View style={styles.inputContainer} >
               <Ionicons
                 name='mail-outline'
@@ -45,9 +51,9 @@ export default function Login() {
                 onChangeText={setEmail}
                 keyboardType='email-address'
                 autoCapitalize='none'
-              >
+              />
 
-              </TextInput>
+              
 
             </View>
             
@@ -73,7 +79,7 @@ export default function Login() {
                 secureTextEntry={!showPassword}
               />
               <TouchableOpacity
-                onPress={()=>setPassword(!showPassword)}
+                onPress={()=>setShowPassword(!showPassword)}
                 style={styles.eyeIcon}
               >
                 <Ionicons
@@ -104,6 +110,7 @@ export default function Login() {
             </Link>
 
           </View>
+          
         </View>
       </View>
     </View>
